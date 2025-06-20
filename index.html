@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PromoPulse Sports Agency | Transforming African Athletes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,28 +20,43 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleheader.css" />
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <div class="container header-container">
-        <div class="logo">
+    <header id="pp-header">
+      <div class="pp-container">
+        <div class="pp-logo">
           <h1>Promo<span>Pulse</span></h1>
         </div>
-        <button class="mobile-toggle" aria-label="Menu">
-          <i class="fas fa-bars"></i>
+
+        <button id="pp-toggle" class="pp-mobile-toggle" aria-label="Menu">
+          <span class="pp-bar"></span>
+          <span class="pp-bar"></span>
+          <span class="pp-bar"></span>
         </button>
-        <nav>
-          <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Athletes</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
+
+        <nav id="pp-nav" class="pp-navigation">
+          <ul class="pp-nav-list">
+            <li><a href="#" class="pp-link pp-active">Home</a></li>
+            <li><a href="#" class="pp-link">About</a></li>
+            <li class="pp-dropdown">
+              <a href="#" class="pp-link">Services</a>
+              <ul class="pp-dropdown-menu">
+                <li><a href="#">Player Representation</a></li>
+                <li><a href="#">Contract Negotiation</a></li>
+                <li><a href="#">Digital & Media Presence</a></li>
+                <li><a href="#">Sponsorship Acquisition</a></li>
+                <li><a href="#">Wealth Management</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="pp-link">Athletes</a></li>
+            <li><a href="#" class="pp-link">Team</a></li>
+            <li><a href="#" class="pp-link">Contact</a></li>
           </ul>
         </nav>
-        <a href="#" class="cta-button">Get Started</a>
+
+        <a href="#" class="pp-cta-button">Get Started</a>
       </div>
     </header>
 
@@ -95,7 +117,7 @@
     <section class="services">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <h2>Our Premium Services</h2>
+          <h2>Our Services</h2>
           <p>
             Comprehensive support for athletes at every stage of their career
           </p>
@@ -519,6 +541,7 @@
       <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/scheader.js" defer></script>
   </body>
 </html>

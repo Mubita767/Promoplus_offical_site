@@ -1,29 +1,6 @@
 // Set current year in footer
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
-// Mobile Navigation Toggle
-const mobileToggle = document.querySelector(".mobile-toggle");
-const navMenu = document.querySelector("nav ul");
-
-mobileToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  mobileToggle.innerHTML = navMenu.classList.contains("active")
-    ? '<i class="fas fa-times"></i>'
-    : '<i class="fas fa-bars"></i>';
-});
-
-// Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  if (
-    !navMenu.contains(e.target) &&
-    !mobileToggle.contains(e.target) &&
-    navMenu.classList.contains("active")
-  ) {
-    navMenu.classList.remove("active");
-    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-  }
-});
-
 // Scroll animation for elements
 function animateOnScroll() {
   const elements = document.querySelectorAll(".animate-on-scroll");
@@ -112,28 +89,6 @@ slider.addEventListener("mouseleave", () => {
   }, 5000);
 });
 
-// Touch swipe support for mobile
-slider.addEventListener("touchstart", (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-});
-
-slider.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-});
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-
-  if (touchStartX - touchEndX > swipeThreshold) {
-    // Swipe left
-    showSlide(currentSlide + 1);
-  } else if (touchEndX - touchStartX > swipeThreshold) {
-    // Swipe right
-    showSlide(currentSlide - 1);
-  }
-}
-
 // Header scroll effect
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
@@ -153,8 +108,18 @@ window.addEventListener("scroll", () => {
 // Close mobile menu when a link is clicked
 document.querySelectorAll("nav a").forEach((link) => {
   link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    const navMenu = document.getElementById("pp-nav");
+    const mobileToggle = document.getElementById("pp-toggle");
+    if (navMenu && navMenu.classList.contains("open")) {
+      navMenu.classList.remove("open");
+    }
+    if (mobileToggle) {
+      mobileToggle.innerHTML = `
+        <span class="pp-bar"></span>
+        <span class="pp-bar"></span>
+        <span class="pp-bar"></span>
+      `;
+    }
   });
 });
 
