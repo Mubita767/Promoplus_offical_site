@@ -1,0 +1,313 @@
+/* Coming Soon Page Styles with Unique Class Names */
+:root {
+  --pps-cs-primary: #2563eb;
+  --pps-cs-primary-dark: #1d4ed8;
+  --pps-cs-secondary: #e11d48;
+  --pps-cs-dark: #1e293b;
+  --pps-cs-light: #f8fafc;
+  --pps-cs-gray: #64748b;
+  --pps-cs-gray-light: #e2e8f0;
+  --pps-cs-radius: 12px;
+  --pps-cs-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --pps-cs-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --pps-cs-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+.pps-cs-main {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--pps-cs-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.pps-cs-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.pps-cs-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.pps-cs-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1893&q=80")
+    no-repeat center center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.pps-cs-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Logo Animation */
+.pps-cs-logo-pulse {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pps-cs-logo-circle {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: pps-cs-pulse 3s infinite;
+}
+
+.pps-cs-logo-circle:nth-child(1) {
+  width: 180px;
+  height: 180px;
+  animation-delay: 0s;
+}
+
+.pps-cs-logo-circle:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  animation-delay: 0.5s;
+}
+
+.pps-cs-logo-circle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  animation-delay: 1s;
+}
+
+.pps-cs-logo-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+  z-index: 2;
+  color: white;
+}
+
+.pps-cs-logo-text span {
+  color: var(--pps-cs-secondary);
+}
+
+@keyframes pps-cs-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Typography */
+.pps-cs-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pps-cs-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+}
+
+/* Countdown */
+.pps-cs-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.pps-cs-countdown-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--pps-cs-radius);
+  padding: 1.5rem;
+  min-width: 120px;
+  box-shadow: var(--pps-cs-shadow);
+  transition: var(--pps-cs-transition);
+}
+
+.pps-cs-countdown-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--pps-cs-shadow-lg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pps-cs-countdown-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pps-cs-countdown-label {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Notify Form */
+.pps-cs-notify-form {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pps-cs-notify-input {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: var(--pps-cs-radius);
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: var(--pps-cs-transition);
+}
+
+.pps-cs-notify-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  background: white;
+}
+
+.pps-cs-notify-btn {
+  background-color: var(--pps-cs-secondary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--pps-cs-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--pps-cs-transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pps-cs-notify-btn:hover {
+  background-color: #c4163d;
+  transform: translateY(-2px);
+  box-shadow: var(--pps-cs-shadow-lg);
+}
+
+/* Social Links */
+.pps-cs-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.pps-cs-social-link {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  transition: var(--pps-cs-transition);
+}
+
+.pps-cs-social-link:hover {
+  background: var(--pps-cs-primary);
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pps-cs-title {
+    font-size: 2.5rem;
+  }
+
+  .pps-cs-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .pps-cs-countdown-item {
+    min-width: 80px;
+    padding: 1rem;
+  }
+
+  .pps-cs-countdown-number {
+    font-size: 2rem;
+  }
+
+  .pps-cs-notify-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pps-cs-notify-input {
+    min-width: 100%;
+  }
+
+  .pps-cs-notify-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pps-cs-title {
+    font-size: 2rem;
+  }
+
+  .pps-cs-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .pps-cs-countdown {
+    gap: 0.5rem;
+  }
+
+  .pps-cs-countdown-item {
+    min-width: 70px;
+    padding: 0.75rem;
+  }
+
+  .pps-cs-countdown-number {
+    font-size: 1.5rem;
+  }
+
+  .pps-cs-countdown-label {
+    font-size: 0.75rem;
+  }
+}
