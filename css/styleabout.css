@@ -1,540 +1,705 @@
-/* About Page Styles */
-:root {
-  --pps-orange: #f3682a;
-  --pps-blue: #1c264a;
-  --pps-white: #ffffff;
-  --pps-light: #f8f9fa;
-  --pps-dark: #121212;
-  --pps-gray: #6c757d;
-  --pps-light-gray: #e9ecef;
-  --pps-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* About Hero Section */
-.pps-about-hero {
-  background: linear-gradient(
-    135deg,
-    var(--pps-blue) 0%,
-    rgba(28, 38, 74, 0.9) 100%
-  );
-  color: var(--pps-white);
-  padding: 180px 0 100px;
-  position: relative;
+/* PromoPulse About Page Styles - Unique Class Names to Prevent Conflicts */
+.pps-about-core {
+  max-width: 100vw;
   overflow: hidden;
-  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #333333;
+  line-height: 1.6;
 }
 
-.pps-about-hero::before {
-  content: "";
+/* Section Padding */
+.pps-section {
+  padding: 5rem 0;
+}
+
+.pps-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pps-full-bleed {
+  width: 100%;
+}
+
+.pps-bg-alt {
+  background-color: #f9f9f9;
+}
+
+.pps-bg-dark {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+/* Section Header Styles */
+.pps-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pps-section-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pps-bg-dark .pps-section-title {
+  color: #ffffff;
+}
+
+.pps-section-intro {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.pps-bg-dark .pps-section-intro {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Section */
+.pps-about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1605&q=80")
+      no-repeat center center/cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.pps-about-hero-content {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.pps-about-main-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.pps-about-subtitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  opacity: 0.9;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+/* Mission/Vision Section */
+.pps-about-mission {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.pps-about-mission-content h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-family: "Staatliches", sans-serif;
+}
+
+.pps-about-mission-content p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.pps-about-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.pps-about-mission-image:hover .pps-about-img {
+  transform: scale(1.03);
+}
+
+.pps-about-vision-mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pps-about-vision-card,
+.pps-about-mission-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.pps-about-vision-card:hover,
+.pps-about-mission-card:hover {
+  transform: translateY(-5px);
+}
+
+.pps-about-vision-icon,
+.pps-about-mission-icon {
+  font-size: 1.5rem;
+  color: #e67e22;
+  margin-bottom: 1rem;
+}
+
+.pps-about-vision-card h4,
+.pps-about-mission-card h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.pps-about-vision-card p,
+.pps-about-mission-card p {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin-bottom: 0;
+}
+
+/* Values Grid */
+.pps-about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pps-about-value-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pps-about-value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pps-about-value-icon {
+  font-size: 2rem;
+  color: #e67e22;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.pps-about-value-card:hover .pps-about-value-icon {
+  transform: scale(1.1);
+}
+
+.pps-about-value-card h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.pps-about-value-card p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Team Section */
+.pps-about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pps-about-team-member {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.pps-about-team-member:hover {
+  transform: translateY(-5px);
+}
+
+.pps-about-team-img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pps-about-team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pps-about-team-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80")
-    no-repeat center center/cover;
-  opacity: 0.3;
-}
-
-.pps-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.pps-hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 20px;
-  font-weight: 800;
-  line-height: 1.2;
-  animation: fadeInUp 1s ease-out;
-}
-
-.pps-hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  margin-bottom: 30px;
-  opacity: 0.9;
-  animation: fadeInUp 1s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-/* About Intro Section */
-.pps-about-intro {
-  padding: 100px 0;
-  background-color: var(--pps-white);
-}
-
-.pps-container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.pps-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  background: rgba(230, 126, 34, 0.8);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.pps-section-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: var(--pps-blue);
-  margin-bottom: 25px;
-  position: relative;
-  display: inline-block;
+.pps-about-team-member:hover .pps-about-team-overlay {
+  opacity: 1;
 }
 
-.pps-section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--pps-orange);
-}
-
-.pps-intro-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--pps-gray);
-  margin-bottom: 20px;
-}
-
-.pps-intro-image {
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.pps-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: var(--pps-transition);
-}
-
-.pps-intro-image:hover .pps-image {
-  transform: scale(1.05);
-}
-
-/* Mission & Vision Section */
-.pps-mission-section {
-  padding: 80px 0;
-  background-color: var(--pps-light);
-}
-
-.pps-mission-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.pps-mission-card {
-  background: var(--pps-white);
-  border-radius: 15px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: var(--pps-transition);
-  border-top: 4px solid transparent;
-}
-
-.pps-vision-card {
-  border-top-color: var(--pps-orange);
-}
-
-.pps-mission-card {
-  border-top-color: var(--pps-blue);
-}
-
-.pps-mission-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.pps-card-icon {
-  font-size: 2.5rem;
-  color: var(--pps-orange);
-  margin-bottom: 20px;
-}
-
-.pps-vision-card .pps-card-icon {
-  color: var(--pps-blue);
-}
-
-.pps-card-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--pps-blue);
-}
-
-.pps-card-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--pps-gray);
-}
-
-/* Values Section */
-.pps-values-section {
-  padding: 100px 0;
-  background-color: var(--pps-white);
-}
-
-.pps-centered {
-  text-align: center;
-}
-
-.pps-section-title.pps-centered::after {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.pps-section-subtitle {
+.pps-about-team-social a {
+  color: #ffffff;
   font-size: 1.2rem;
-  color: var(--pps-gray);
-  margin-bottom: 50px;
-  text-align: center;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease;
 }
 
-.pps-values-grid {
+.pps-about-team-social a:hover {
+  transform: scale(1.2);
+}
+
+.pps-about-team-member h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.pps-about-team-title {
+  color: #e67e22;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.pps-about-team-bio {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.pps-about-talent-scouts {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #eeeeee;
+}
+
+.pps-about-talent-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.pps-about-talent-description {
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.pps-about-scout-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.pps-value-item {
-  background: var(--pps-light);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  transition: var(--pps-transition);
+.pps-about-scout-stat {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.pps-value-item:hover {
-  transform: translateY(-10px);
+.pps-about-scout-number {
+  display: block;
+  font-family: "Staatliches", sans-serif;
+  font-size: 2rem;
+  color: #e67e22;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.pps-about-scout-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Differentiators Section */
+.pps-about-diff-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.pps-about-diff-image {
+  border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.pps-value-icon {
-  width: 70px;
-  height: 70px;
-  background: var(--pps-orange);
-  color: var(--pps-white);
+.pps-about-diff-features {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.pps-about-diff-feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.pps-about-diff-icon {
+  width: 50px;
+  height: 50px;
+  background: #e67e22;
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 1.8rem;
-  transition: var(--pps-transition);
-}
-
-.pps-value-item:hover .pps-value-icon {
-  transform: rotate(15deg) scale(1.1);
-}
-
-.pps-value-title {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--pps-blue);
-}
-
-.pps-value-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--pps-gray);
-}
-
-/* Why Choose Us Section */
-.pps-why-section {
-  padding: 100px 0;
-  background-color: var(--pps-light);
-}
-
-.pps-why-content {
-  max-width: 600px;
-}
-
-.pps-why-list {
-  list-style: none;
-  margin-top: 30px;
-}
-
-.pps-why-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.pps-why-icon {
-  color: var(--pps-orange);
   font-size: 1.2rem;
-  margin-right: 15px;
-  margin-top: 3px;
-  flex-shrink: 0;
 }
 
-.pps-why-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--pps-gray);
+.pps-about-diff-text h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
-.pps-why-text strong {
-  color: var(--pps-blue);
+.pps-about-diff-text p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
 }
 
-.pps-why-image {
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Team Section */
-.pps-team-section {
-  padding: 100px 0;
-  background-color: var(--pps-white);
-}
-
-.pps-team-grid {
+/* Clients Section */
+.pps-about-clients-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
 }
 
-.pps-team-member {
-  background: var(--pps-light);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  transition: var(--pps-transition);
-}
-
-.pps-team-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.pps-member-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 20px;
-  border: 4px solid var(--pps-orange);
-}
-
-.pps-member-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--pps-transition);
-}
-
-.pps-team-member:hover .pps-member-image img {
-  transform: scale(1.1);
-}
-
-.pps-member-name {
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-  color: var(--pps-blue);
-}
-
-.pps-member-title {
-  color: var(--pps-orange);
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.pps-member-bio {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--pps-gray);
-}
-
-.pps-team-cta {
-  text-align: center;
-  margin-top: 50px;
-}
-
-/* CTA Section */
-.pps-about-cta {
-  padding: 100px 0;
-  background: linear-gradient(
-    135deg,
-    var(--pps-orange) 0%,
-    rgba(243, 104, 42, 0.9) 100%
-  );
-  color: var(--pps-white);
+.pps-about-client-stat {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
-.pps-cta-content {
+.pps-about-client-number {
+  display: block;
+  font-family: "Staatliches", sans-serif;
+  font-size: 2rem;
+  color: #e67e22;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.pps-about-client-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Testimonials */
+.pps-about-testimonials {
+  margin-top: 4rem;
+}
+
+.pps-about-testimonial-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pps-about-testimonial-slider {
+  position: relative;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.pps-cta-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 20px;
+.pps-about-testimonial {
+  display: none;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
 }
 
-.pps-cta-text {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
+.pps-about-testimonial.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
 }
 
-.pps-cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.pps-cta-button {
-  display: inline-block;
-  padding: 15px 35px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--pps-transition);
-  font-size: 1.1rem;
-}
-
-.pps-cta-button i {
-  margin-left: 8px;
-}
-
-.pps-primary {
-  background: var(--pps-white);
-  color: var(--pps-orange);
-  border: 2px solid var(--pps-white);
-}
-
-.pps-primary:hover {
-  background: transparent;
-  color: var(--pps-white);
-}
-
-.pps-secondary {
-  background: transparent;
-  color: var(--pps-white);
-  border: 2px solid var(--pps-white);
-}
-
-.pps-secondary:hover {
-  background: var(--pps-white);
-  color: var(--pps-orange);
-}
-
-/* Animations */
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Responsive Styles */
+.pps-about-testimonial blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555555;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.pps-about-testimonial blockquote::before {
+  content: "\201C";
+  font-size: 3rem;
+  color: #e67e22;
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+  opacity: 0.3;
+}
+
+.pps-about-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pps-about-testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pps-about-testimonial-name {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.pps-about-testimonial-role {
+  color: #e67e22;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pps-about-testimonial-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pps-about-testimonial-prev,
+.pps-about-testimonial-next {
+  background: transparent;
+  border: none;
+  color: #e67e22;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+}
+
+.pps-about-testimonial-prev:hover,
+.pps-about-testimonial-next:hover {
+  color: #d35400;
+}
+
+.pps-about-testimonial-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pps-about-testimonial-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bdc3c7;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pps-about-testimonial-dots .dot.active {
+  background: #e67e22;
+}
+
+/* CTA Section */
+.pps-about-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pps-about-cta-title {
+  font-family: "Staatliches", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pps-about-cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.pps-about-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pps-about-cta-btn-primary,
+.pps-about-cta-btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pps-about-cta-btn-primary {
+  background: #e67e22;
+  color: #ffffff;
+  border: 2px solid #e67e22;
+}
+
+.pps-about-cta-btn-primary:hover {
+  background: #d35400;
+  border-color: #d35400;
+  transform: translateY(-2px);
+}
+
+.pps-about-cta-btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.pps-about-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 992px) {
-  .pps-intro-grid {
+  .pps-section {
+    padding: 4rem 0;
+  }
+
+  .pps-about-vision-mission {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .pps-intro-image {
-    order: -1;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .pps-mission-cards {
-    grid-template-columns: 1fr;
-    max-width: 600px;
-  }
-
-  .pps-why-section .pps-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .pps-why-image {
-    max-width: 600px;
-    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .pps-hero-title {
-    font-size: 2.5rem;
+  .pps-section {
+    padding: 3rem 0;
   }
 
-  .pps-hero-subtitle {
+  .pps-about-hero {
+    min-height: 50vh;
+    padding: 4rem 0;
+  }
+
+  .pps-about-subtitle {
     font-size: 1.2rem;
   }
 
-  .pps-section-title {
-    font-size: 2rem;
-  }
-
-  .pps-team-grid {
+  .pps-about-diff-content {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 50px auto 0;
   }
 
-  .pps-cta-buttons {
+  .pps-about-diff-image {
+    order: -1;
+  }
+
+  .pps-about-cta-buttons {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
   }
 
-  .pps-cta-button {
+  .pps-about-cta-btn-primary,
+  .pps-about-cta-btn-secondary {
     width: 100%;
-    text-align: center;
+    max-width: 250px;
   }
 }
 
 @media (max-width: 576px) {
+  .pps-section {
+    padding: 2.5rem 0;
+  }
+
   .pps-about-hero {
-    padding: 150px 0 80px;
+    min-height: 400px;
   }
 
-  .pps-hero-title {
-    font-size: 2rem;
+  .pps-about-main-title {
+    font-size: 2.2rem;
   }
 
-  .pps-hero-subtitle {
+  .pps-about-subtitle {
     font-size: 1.1rem;
   }
 
-  .pps-section-title {
-    font-size: 1.8rem;
-  }
-
-  .pps-values-grid {
+  .pps-about-team-grid {
     grid-template-columns: 1fr;
   }
 
-  .pps-cta-title {
-    font-size: 2rem;
+  .pps-about-clients-stats {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .pps-cta-text {
-    font-size: 1.1rem;
+  .pps-about-testimonial-author {
+    flex-direction: column;
+    text-align: center;
   }
 }
