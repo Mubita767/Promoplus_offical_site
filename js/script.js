@@ -55,8 +55,6 @@ statCards.forEach((card) => {
 let currentSlide = 0;
 const slides = document.querySelectorAll(".testimonial-slide");
 const dots = document.querySelectorAll(".slider-dot");
-let touchStartX = 0;
-let touchEndX = 0;
 
 function showSlide(n) {
   slides.forEach((slide) => slide.classList.remove("active"));
@@ -89,42 +87,8 @@ slider.addEventListener("mouseleave", () => {
   }, 5000);
 });
 
-// Header scroll effect
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  const backToTop = document.getElementById("back-to-top");
-
-  if (window.scrollY > 100) {
-    header.style.background = "rgba(28, 38, 74, 0.95)";
-    header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.2)";
-    backToTop.classList.add("visible");
-  } else {
-    header.style.background = "rgba(255, 255, 255, 0.95)";
-    header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
-    backToTop.classList.remove("visible");
-  }
-});
-
-// Close mobile menu when a link is clicked
-document.querySelectorAll("nav a").forEach((link) => {
-  link.addEventListener("click", () => {
-    const navMenu = document.getElementById("pp-nav");
-    const mobileToggle = document.getElementById("pp-toggle");
-    if (navMenu && navMenu.classList.contains("open")) {
-      navMenu.classList.remove("open");
-    }
-    if (mobileToggle) {
-      mobileToggle.innerHTML = `
-        <span class="pp-bar"></span>
-        <span class="pp-bar"></span>
-        <span class="pp-bar"></span>
-      `;
-    }
-  });
-});
-
 // Back to top functionality
-document.getElementById("back-to-top").addEventListener("click", () => {
+document.getElementById("back-to-top")?.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -138,7 +102,6 @@ if (newsletterForm) {
     e.preventDefault();
     const emailInput = newsletterForm.querySelector('input[type="email"]');
     if (emailInput.value) {
-      // Here you would normally send the data to a server
       alert("Thank you for subscribing to our newsletter!");
       emailInput.value = "";
     }
